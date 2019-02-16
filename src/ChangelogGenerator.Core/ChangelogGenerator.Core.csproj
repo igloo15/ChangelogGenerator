@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Core</BaseOutputPath>
+    <OutputType>Library</OutputType>
+    <WriteVersionInfoToBuildLog>true</WriteVersionInfoToBuildLog>
+    <UpdateVersionProperties>true</UpdateVersionProperties>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>igloo15.ChangelogGenerator.Core</Title>
+    <Authors>Igloo15</Authors>
+    <Description>net standard library that can generate a changelog based on the git history</Description>
+    <PackageProjectUrl>https://github.com/igloo15/ChangelogGenerator</PackageProjectUrl>
+    <PackageTags>mqttnet;mqttserver;server;dotnet;netstandard;diagnostics</PackageTags>
+    <RepositoryUrl>https://github.com/igloo15/ChangelogGenerator.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>

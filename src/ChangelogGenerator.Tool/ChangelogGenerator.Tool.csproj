@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>ChangelogGenerator.Tool</AssemblyName>
+    <AssemblyTitle>ChangelogGenerator</AssemblyTitle>
+    <RootNamespace>ChangelogGenerator.Tool</RootNamespace>
+    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Tool</BaseOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <OutputType>Exe</OutputType>
+    <ToolCommandName>dotnet-changelog-generator</ToolCommandName>
+    <IsPackable>true</IsPackable>
+    <PackageVersion>$(Version)</PackageVersion>
+    <Title>igloo15.ChangelogGenerator.Tool</Title>
+    <Authors>igloo15</Authors>
+    <Description>dotnet cli tool used to generate a changelog</Description>
+    <PackageProjectUrl>https://github.com/igloo15/ChangelogGenerator</PackageProjectUrl>
+    <PackageTags>changelog;dotnet;cli;tool;netcore</PackageTags>
+    <RepositoryUrl>https://github.com/igloo15/ChangelogGenerator.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,65 @@
+{
+  "Categories": [
+    {
+      "Keys": [ "#Summary", "#SUMMARY" ],
+      "DisplayName": null,
+      "IsSummary": true,
+      "IsDefault": false,
+      "IsJiraLink": false,
+      "JiraProjectId": null
+    },
+    {
+      "Keys": [ "#Commits" ],
+      "DisplayName": "Other Commits",
+      "IsSummary": false,
+      "IsDefault": true,
+      "IsJiraLink": false,
+      "JiraProjectId": null
+    },
+    {
+      "Keys": [ "#Add", "#ADD" ],
+      "DisplayName": "Add",
+      "IsSummary": false,
+      "IsDefault": false,
+      "IsJiraLink": false,
+      "JiraProjectId": null
+    },
+    {
+      "Keys": [ "#Change", "#CHANGE", "#Changes", "#CHANGES" ],
+      "DisplayName": "Changes",
+      "IsSummary": false,
+      "IsDefault": false,
+      "IsJiraLink": false,
+      "JiraProjectId": null
+    },
+    {
+      "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
+      "DisplayName": "Fixed",
+      "IsSummary": false,
+      "IsDefault": false,
+      "IsJiraLink": false,
+      "JiraProjectId": null
+    }
+  ],
+  "DefaultCategory": null,
+  "Jira": {
+    "BaseUrl": "https://jira.aptima.com/browse/",
+    "Projects": [
+      {
+        "Keys": [ "#ASA-" ],
+        "DisplayName": "ASA Missing Issue : ",
+        "IsSummary": false,
+        "IsDefault": false,
+        "IsJiraLink": true,
+        "JiraProjectId": "ASA"
+      }
+    ]
+  },
+  "VersionFilters": [ "v" ],
+  "FormatSpaceBetweenIssueAndLink": " ",
+  "VersionFormat": "## ",
+  "CategoryFormat": "### ",
+  "IssueFormat": "* ",
+  "MissingIssueContent": " N/A ",
+  "ChangelogLocation": "./CHANGELOG.md"
+}
