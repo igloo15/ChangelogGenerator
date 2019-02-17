@@ -39,7 +39,7 @@ namespace ChangelogGenerator.Core
         {
             return Message.Split(
                 new[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None
+                StringSplitOptions.RemoveEmptyEntries
             );
         }
 
@@ -51,6 +51,8 @@ namespace ChangelogGenerator.Core
             message = message.Replace("{Commit.AuthorEmail}", AuthorEmail);
             message = message.Replace("{Commit.SHA}", SHA);
             message = message.Replace("{Commit.Version}", Version);
+
+            return message;
         }
 
     }

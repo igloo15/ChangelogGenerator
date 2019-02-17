@@ -27,12 +27,16 @@ namespace ChangelogGenerator.Core
             {
                 sb.AppendLine(version.Name);
                 sb.AppendLine($"Commits : {version.Commits.Count}");
-                foreach(var commit in version.Commits)
+                foreach(var category in version.Categories)
                 {
-                    sb.AppendLine($"{commit.CommitDate} - {commit.Message}");
+                    sb.AppendLine($"Category : {category.Name}");
+                    foreach(var item in category.Items)
+                    {
+                        sb.AppendLine($"{item.Message}");
+                    }
+                    
                 }
             }
-
 
             return sb.ToString();
         }

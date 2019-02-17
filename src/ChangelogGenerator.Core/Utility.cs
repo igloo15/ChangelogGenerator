@@ -87,7 +87,9 @@ namespace ChangelogGenerator.Core
 
             var commits = GetCommitBetweenTags(settings, versionName, fromName, toName);
 
-            return new GitVersion(versionName, commits);
+            var categories = GitChangelogCategoryParser.GetCategories(commits, settings);
+
+            return new GitVersion(versionName, commits, categories);
         }
     }
 }

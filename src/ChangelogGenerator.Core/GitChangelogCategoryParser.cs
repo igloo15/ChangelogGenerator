@@ -66,7 +66,7 @@ namespace ChangelogGenerator.Core
         {
             foreach (var token in line.Tokens)
             {
-                var category = settings.Categories.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k));
+                var category = settings.Categories.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
                 if (category != null)
                 {
                     line.RemoveToken(token);
@@ -81,7 +81,7 @@ namespace ChangelogGenerator.Core
             List<GitChangelogLink> links = new List<GitChangelogLink>();
             foreach (var token in line.Tokens)
             {
-                var link = settings.Links.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k));
+                var link = settings.Links.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
                 if (link != null)
                 {
                     line.RemoveToken(token);

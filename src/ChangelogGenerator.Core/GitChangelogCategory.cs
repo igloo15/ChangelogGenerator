@@ -9,7 +9,5 @@ namespace ChangelogGenerator.Core
         public List<GitChangelogItem> Items { get; set; }
 
         public string Name { get; set; }
-
-
     }
 }
