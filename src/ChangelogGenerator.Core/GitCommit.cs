@@ -37,12 +37,20 @@ namespace ChangelogGenerator.Core
 
         public string[] GetMessageLines()
         {
-            string[] lines = Message.Split(
+            return Message.Split(
                 new[] { "\r\n", "\r", "\n" },
                 StringSplitOptions.None
             );
+        }
 
-            return lines;
+        public string Parse(string message)
+        {
+            message = message.Replace("{Commit.Message}", Message);
+            message = message.Replace("{Commit.MessageShort}", MessageShort);
+            message = message.Replace("{Commit.Author}", Author);
+            message = message.Replace("{Commit.AuthorEmail}", AuthorEmail);
+            message = message.Replace("{Commit.SHA}", SHA);
+            message = message.Replace("{Commit.Version}", Version);
         }
 
     }
