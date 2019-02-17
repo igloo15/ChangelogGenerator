@@ -5,13 +5,13 @@ using System.Text;
 
 namespace ChangelogGenerator.Core
 {
-    public class GitVersion
+    internal class GitVersion
     {
-        public List<Commit> Commits { get; set; } = new List<Commit>();
+        public List<GitCommit> Commits { get; set; } = new List<GitCommit>();
 
         public string Name { get; set; } = "";
 
-        public GitVersion(string name, List<Commit> commits)
+        public GitVersion(string name, List<GitCommit> commits)
         {
             Commits = commits;
             Name = name;

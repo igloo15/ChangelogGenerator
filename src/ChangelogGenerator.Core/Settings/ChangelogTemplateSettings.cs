@@ -10,7 +10,7 @@ namespace ChangelogGenerator.Core.Settings
 
         public string CategoryTemplate { get; set; } = "### {Category}";
 
-        public string IssueTemplate { get; set; } = "* {Message} {LinkTemplate}";
+        public string IssueTemplate { get; set; } = "* {Message} {Links}";
 
         public string LinkTemplate { get; set; } = "[{LinkCleanKey}]({Url})";
 
