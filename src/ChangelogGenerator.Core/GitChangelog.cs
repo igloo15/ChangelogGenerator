@@ -29,7 +29,7 @@ namespace ChangelogGenerator.Core
                 sb.AppendLine($"Commits : {version.Commits.Count}");
                 foreach(var commit in version.Commits)
                 {
-                    sb.AppendLine($"{commit.Committer.When.ToString()} - {commit.Message}");
+                    sb.AppendLine($"{commit.CommitDate} - {commit.Message}");
                 }
             }
 

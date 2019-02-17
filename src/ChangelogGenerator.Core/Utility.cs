@@ -9,7 +9,7 @@ namespace ChangelogGenerator.Core
 {
     internal static class Utility
     {
-        public static List<GitCommit> GetCommitBetweenTags(ChangelogSettings settings, string from, string to)
+        public static List<GitCommit> GetCommitBetweenTags(ChangelogSettings settings, string versionName, string from, string to)
         {
             using (var repo = new Repository(settings.GitRepoLocation))
             {
@@ -51,7 +51,7 @@ namespace ChangelogGenerator.Core
 
                 var commits = repo.Commits.QueryBy(filter);
 
-                return commits.Select(GitCommit.Create).ToList();
+                return commits.Select(c => GitCommit.Create(versionName, c)).ToList();
             }
         }
 
@@ -85,7 +85,7 @@ namespace ChangelogGenerator.Core
         {
             var versionName = string.IsNullOrEmpty(name) ? settings.UnreleasedTitle : name;
 
-            var commits = GetCommitBetweenTags(settings, fromName, toName);
+            var commits = GetCommitBetweenTags(settings, versionName, fromName, toName);
 
             return new GitVersion(versionName, commits);
         }

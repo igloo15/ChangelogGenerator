@@ -21,11 +21,7 @@ namespace ChangelogGenerator.Core
 
         public string Version { get; set; }
 
-        public string Category { get; set; }
-
-        public string Links { get; set; }
-
-        public static GitCommit Create(Commit commit)
+        public static GitCommit Create(string versionName, Commit commit)
         {
             return new GitCommit
             {
@@ -34,8 +30,19 @@ namespace ChangelogGenerator.Core
                 Author = commit.Author.Name,
                 AuthorEmail = commit.Author.Email,
                 CommitDate = commit.Author.When.ToString(),
-                SHA = commit.Sha
+                SHA = commit.Sha,
+                Version = versionName
             };
+        }
+
+        public string[] GetMessageLines()
+        {
+            string[] lines = Message.Split(
+                new[] { "\r\n", "\r", "\n" },
+                StringSplitOptions.None
+            );
+
+            return lines;
         }
 
     }
