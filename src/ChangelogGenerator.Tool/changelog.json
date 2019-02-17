@@ -4,62 +4,53 @@
       "Keys": [ "#Summary", "#SUMMARY" ],
       "DisplayName": null,
       "IsSummary": true,
-      "IsDefault": false,
-      "IsJiraLink": false,
-      "JiraProjectId": null
+      "IsDefault": false
     },
     {
       "Keys": [ "#Commits" ],
       "DisplayName": "Other Commits",
       "IsSummary": false,
-      "IsDefault": true,
-      "IsJiraLink": false,
-      "JiraProjectId": null
+      "IsDefault": true
     },
     {
       "Keys": [ "#Add", "#ADD" ],
       "DisplayName": "Add",
       "IsSummary": false,
-      "IsDefault": false,
-      "IsJiraLink": false,
-      "JiraProjectId": null
+      "IsDefault": false
     },
     {
       "Keys": [ "#Change", "#CHANGE", "#Changes", "#CHANGES" ],
       "DisplayName": "Changes",
       "IsSummary": false,
-      "IsDefault": false,
-      "IsJiraLink": false,
-      "JiraProjectId": null
+      "IsDefault": false
     },
     {
       "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
       "DisplayName": "Fixed",
       "IsSummary": false,
-      "IsDefault": false,
-      "IsJiraLink": false,
-      "JiraProjectId": null
+      "IsDefault": false
     }
   ],
-  "DefaultCategory": null,
-  "Jira": {
-    "BaseUrl": "https://jira.aptima.com/browse/",
-    "Projects": [
-      {
-        "Keys": [ "#ASA-" ],
-        "DisplayName": "ASA Missing Issue : ",
-        "IsSummary": false,
-        "IsDefault": false,
-        "IsJiraLink": true,
-        "JiraProjectId": "ASA"
-      }
-    ]
-  },
+  "Links": [
+    {
+      "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
+      "ReplaceTokens": [ "#" ],
+      "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
+    }
+  ],    
   "VersionFilters": [ "v" ],
-  "FormatSpaceBetweenIssueAndLink": " ",
-  "VersionFormat": "## ",
-  "CategoryFormat": "### ",
-  "IssueFormat": "* ",
-  "MissingIssueContent": " N/A ",
-  "ChangelogLocation": "./CHANGELOG.md"
+  "Templates": {
+    "VersionTemplate": "## {Version}",
+    "CategoryTemplate": "### ",
+    "IssueTemplate": "* {Message} {LinkTemplate}",
+    "LinkTemplate": "[{LinkCleanKey}]({Url})",
+    "NoIssueTemplate": " N/A "
+  },
+  "ChangelogLocation": "./CHANGELOG.md",
+  "GitRepoLocation": "../../../../.",
+  "UnreleasedTitle": "Unreleased",
+  "GitRepoCommitLimit": -1,
+  "AllCommits": true,
+  "TestMode": false,
+  "LatestCodeBranch": "develop"
 }

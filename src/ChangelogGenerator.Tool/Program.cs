@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChangelogGenerator.Core;
+using System;
 
 namespace ChangelogGenerator.Tool
 {
@@ -6,7 +7,13 @@ namespace ChangelogGenerator.Tool
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ChangelogCore core = new ChangelogCore();
+
+            core.GenerateChangelog(args);
+
+
+            Console.WriteLine("Press Enter to Exit");
+            Console.ReadLine();
         }
     }
 }

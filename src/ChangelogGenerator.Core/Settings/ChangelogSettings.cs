@@ -8,17 +8,11 @@ namespace ChangelogGenerator.Core.Settings
     {
         public List<ChangelogCategory> Categories { get; set; } = new List<ChangelogCategory>();
 
+        public List<ChangelogLink> Links { get; set; } = new List<ChangelogLink>();
+
         public List<string> VersionFilters { get; set; } = new List<string>();
 
-        public string VersionTemplate { get; set; } = "## {Version}";
-
-        public string CategoryTemplate { get; set; } = "### {Category}";
-
-        public string IssueTemplate { get; set; } = "* {Message} {LinkTemplate}";
-
-        public string LinkTemplate { get; set; } = "[{LinkCleanKey}]({Url})";
-
-        public string NoIssuesTemplate { get; set; } = " N/A ";
+        public ChangelogTemplateSettings Templates { get; set; } = new ChangelogTemplateSettings();
 
         public string ChangelogLocation { get; set; } = "./CHANGELOG.md";
 
@@ -26,8 +20,12 @@ namespace ChangelogGenerator.Core.Settings
 
         public string UnreleasedTitle { get; set; } = "Unreleased";
 
-        public int GitRepoCommitTake { get; set; } = -1;
+        public int GitRepoCommitLimit { get; set; } = -1;
 
         public bool AllCommits { get; set; } = true;
+
+        public bool TestMode { get; set; } = false;
+
+        public string LatestCodeBranch { get; set; } = "develop";
     }
 }

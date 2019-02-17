@@ -20,4 +20,12 @@
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+    <PackageReference Include="LibGit2Sharp" Version="0.26.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>
