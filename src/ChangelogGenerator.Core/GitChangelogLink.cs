@@ -17,17 +17,25 @@ namespace ChangelogGenerator.Core
             LinkSettings = settings;
         }
 
-        public string GetLink()
+        public string GetLink(ChangelogSettings settings)
         {
-            var message = LinkSettings.UrlTemplate;
+            var url = LinkSettings.UrlTemplate;
+            var message = settings.Templates.LinkTemplate;
+
             var cleanToken = Token;
             foreach(var key in LinkSettings.ReplaceTokens)
             {
                 cleanToken = cleanToken.Replace(key, "");
             }
 
+            url = url.Replace("{LinkKey}", Token);
             message = message.Replace("{LinkKey}", Token);
+
+            url = url.Replace("{LinkCleanKey}", cleanToken);
             message = message.Replace("{LinkCleanKey}", cleanToken);
+
+            message = message.Replace("{Url}", url);
+
             return message;
         }
     }

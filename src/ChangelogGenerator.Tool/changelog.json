@@ -42,7 +42,7 @@
   "Templates": {
     "VersionTemplate": "## {Version}",
     "CategoryTemplate": "### ",
-    "IssueTemplate": "* {Message} {LinkTemplate}",
+    "IssueTemplate": "* {Message} {Links}",
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
     "NoIssueTemplate": " N/A "
   },

@@ -50,7 +50,9 @@ namespace ChangelogGenerator.Core
 
         public static string GetMessage(ChangelogSettings settings, GitChangelogItem item, GitCommitMessageLine line)
         {
-            var message = line.Message;
+            var message = settings.Templates.IssueTemplate;
+
+            message = message.Replace("{Message}", line.Message);
 
             message = message.Replace("{Links}", item.Links);
 
@@ -91,7 +93,7 @@ namespace ChangelogGenerator.Core
             StringBuilder sb = new StringBuilder();
             foreach(var link in links)
             {
-                sb.Append(link.GetLink()).Append(" ");
+                sb.Append(link.GetLink(settings)).Append(" ");
             }
             return sb.ToString();
         }
