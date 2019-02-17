@@ -25,17 +25,20 @@ namespace ChangelogGenerator.Core
 
             foreach(var version in Versions)
             {
-                sb.AppendLine(version.Name);
+                
+                sb.AppendLine(version.GetText(Settings));
                 sb.AppendLine($"Commits : {version.Commits.Count}");
                 foreach(var category in version.Categories)
                 {
-                    sb.AppendLine($"Category : {category.Name}");
+                    sb.AppendLine(category.GetText(Settings));
                     foreach(var item in category.Items)
                     {
                         sb.AppendLine($"{item.Message}");
                     }
-                    
+                    sb.AppendLine(Settings.Templates.EndCategoryTemplate);
                 }
+
+                sb.AppendLine(Settings.Templates.EndVersionTemplate);
             }
 
             return sb.ToString();

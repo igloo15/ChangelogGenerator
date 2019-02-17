@@ -15,5 +15,9 @@ namespace ChangelogGenerator.Core.Settings
         public string LinkTemplate { get; set; } = "[{LinkCleanKey}]({Url})";
 
         public string NoIssuesTemplate { get; set; } = " N/A ";
+
+        public string EndVersionTemplate { get; set; } = "\n";
+
+        public string EndCategoryTemplate { get; set; } = "\n";
     }
 }

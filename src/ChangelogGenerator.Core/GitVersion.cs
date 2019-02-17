@@ -21,5 +21,14 @@ namespace ChangelogGenerator.Core
             Name = name;
         }
 
+        public string GetText(ChangelogSettings settings)
+        {
+            var template = settings.Templates.VersionTemplate;
+
+            template = template.Replace("{Version}", Name);
+
+            return template;
+        }
+
     }
 }

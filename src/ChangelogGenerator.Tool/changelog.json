@@ -41,10 +41,12 @@
   "VersionFilters": [ "v" ],
   "Templates": {
     "VersionTemplate": "## {Version}",
-    "CategoryTemplate": "### ",
+    "CategoryTemplate": "### {Category}",
     "IssueTemplate": "* {Message} {Links}",
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
-    "NoIssueTemplate": " N/A "
+    "NoIssueTemplate": " N/A ",
+    "EndCategoryTemplate": "\n",
+    "EndVersionTemplate": "\n"
   },
   "ChangelogLocation": "./CHANGELOG.md",
   "GitRepoLocation": "../../../../.",
