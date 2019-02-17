@@ -10,10 +10,6 @@ namespace ChangelogGenerator.Tool
             ChangelogCore core = new ChangelogCore();
 
             core.GenerateChangelog(args);
-
-
-            Console.WriteLine("Press Enter to Exit");
-            Console.ReadLine();
         }
     }
 }

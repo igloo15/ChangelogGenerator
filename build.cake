@@ -6,7 +6,7 @@ var target = Argument<string>("target", "Default");
 
 GitVersion result;
 DotNetCoreMSBuildSettings MSBuildSettings;
-string SolutionLocation = "./src/MQTTServer.sln";
+string SolutionLocation = "./src/ChangelogGenerator.sln";
 string PackagesLocation = "./packages.local";
 
 Setup((c) =>

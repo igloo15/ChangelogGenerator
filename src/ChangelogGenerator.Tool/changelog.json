@@ -40,6 +40,7 @@
   ],    
   "VersionFilters": [ "v" ],
   "Templates": {
+    "TitleTemplate": "# Changelog",
     "VersionTemplate": "## {Version}",
     "CategoryTemplate": "### {Category}",
     "IssueTemplate": "* {Message} {Links}",

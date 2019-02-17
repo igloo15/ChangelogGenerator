@@ -6,6 +6,8 @@ namespace ChangelogGenerator.Core.Settings
 {
     public class ChangelogTemplateSettings
     {
+        public string TitleTemplate { get; set; } = "# Changelog";
+
         public string VersionTemplate { get; set; } = "## {Version}";
 
         public string CategoryTemplate { get; set; } = "### {Category}";

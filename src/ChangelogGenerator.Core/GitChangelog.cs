@@ -23,11 +23,10 @@ namespace ChangelogGenerator.Core
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.AppendLine(Settings.Templates.TitleTemplate);
             foreach(var version in Versions)
             {
-                
                 sb.AppendLine(version.GetText(Settings));
-                sb.AppendLine($"Commits : {version.Commits.Count}");
                 foreach(var category in version.Categories)
                 {
                     sb.AppendLine(category.GetText(Settings));
@@ -37,7 +36,6 @@ namespace ChangelogGenerator.Core
                     }
                     sb.AppendLine(Settings.Templates.EndCategoryTemplate);
                 }
-
                 sb.AppendLine(Settings.Templates.EndVersionTemplate);
             }
 

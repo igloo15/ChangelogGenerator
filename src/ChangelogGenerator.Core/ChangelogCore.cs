@@ -21,7 +21,16 @@ namespace ChangelogGenerator.Core
         {
             GitChangelog changelog = GitChangelog.Generate(settings);
 
-            Console.WriteLine(changelog.GetChangeLogText());
+            var content = changelog.GetChangeLogText();
+
+            if (settings.TestMode)
+            {
+                Console.WriteLine(content);
+            }
+            else
+            {
+                File.WriteAllText(settings.ChangelogLocation, content);
+            }
         }
 
         private int GenerateChangelog(ChangelogCommandlineSettings commandLineSettings)
