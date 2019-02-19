@@ -12,7 +12,7 @@
     <IsPackable>true</IsPackable>
     <PackageVersion>$(Version)</PackageVersion>
     <Title>igloo15.ChangelogGenerator.Core</Title>
-    <Authors>Igloo15</Authors>
+    <Authors>igloo15</Authors>
     <Description>net standard library that can generate a changelog based on the git history</Description>
     <PackageProjectUrl>https://github.com/igloo15/ChangelogGenerator</PackageProjectUrl>
     <PackageTags>mqttnet;mqttserver;server;dotnet;netstandard;diagnostics</PackageTags>
@@ -23,9 +23,7 @@
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.4.3" />
     <PackageReference Include="LibGit2Sharp" Version="0.26.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 
 </Project>

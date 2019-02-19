@@ -18,5 +18,8 @@ namespace ChangelogGenerator.Core.Settings
 
         [Option('n', "next-version", Default = null, HelpText = "The name of the next version to be released. This should be used when creating changelog for next version to be released.")]
         public string NextVersion { get; set; }
+
+        [Option('r', "repo-location", HelpText = "The location of the repo to generate a changelog from")]
+        public string RepoLocation { get; set; }
     }
 }

@@ -36,6 +36,9 @@ Task("Update-Version")
 				});
 
 		var cakeVersion = typeof(ICakeContext).Assembly.GetName().Version.ToString();
+		
+		if(AppVeyor.IsRunningOnAppVeyor)
+			AppVeyor.UpdateBuildVersion(result.LegacySemVerPadded);
 
         MSBuildSettings = new DotNetCoreMSBuildSettings()
                             .WithProperty("Version", result.LegacySemVerPadded)
@@ -97,7 +100,8 @@ Task("Push")
         {
             Information($"Pushing Package {nupkgFile}");
             NuGetPush(nupkgFile, new NuGetPushSettings {
-                Source = "https://api.nuget.org/v3/index.json"
+                Source = "https://api.nuget.org/v3/index.json",
+				ApiKey = EnvironmentVariable("apikey") 
             });
             Information($"Succesfully Pushed Package {nupkgFile}");
         }
