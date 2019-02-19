@@ -16,6 +16,7 @@
     <ToolCommandName>dotnet-changelog-generator</ToolCommandName>
     <IsPackable>true</IsPackable>
     <PackageVersion>$(Version)</PackageVersion>
+    <PackageId>igloo15.ChangelogGenerator.Tool</PackageId>
     <Title>igloo15.ChangelogGenerator.Tool</Title>
     <Authors>igloo15</Authors>
     <Description>dotnet cli tool used to generate a changelog</Description>

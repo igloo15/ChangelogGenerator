@@ -11,6 +11,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageVersion>$(Version)</PackageVersion>
+    <PackageId>igloo15.ChangelogGenerator.Core</PackageId>
     <Title>igloo15.ChangelogGenerator.Core</Title>
     <Authors>igloo15</Authors>
     <Description>net standard library that can generate a changelog based on the git history</Description>
