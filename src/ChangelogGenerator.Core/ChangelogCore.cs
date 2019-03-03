@@ -54,6 +54,8 @@ namespace ChangelogGenerator.Core
                 ChangelogSettings newSettings = new ChangelogSettings();
 
                 var directory = Path.GetDirectoryName(configLocation);
+                if (string.IsNullOrEmpty(directory))
+                    directory = Environment.CurrentDirectory;
 
                 if (!Directory.Exists(directory))
                 {
