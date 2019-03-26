@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChangelogGenerator.Core.Settings;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,9 +18,15 @@ namespace ChangelogGenerator.Core
             Tokens = message.Split(' ');
         }
 
-        public void RemoveToken(string token)
+        public void RemoveToken(string currentToken, ChangelogCategory category)
         {
-            Message = Message.Replace(token, "");
+            if (category.ReplaceKey)
+                Message = Message.Replace(currentToken, "");
+
+            foreach(var token in category.ReplaceTokens)
+            {
+                Message = Message.Replace(token, "");
+            }
         }
     }
 }

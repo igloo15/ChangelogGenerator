@@ -24,8 +24,11 @@
                 }
               ]
             },
+            "ReplaceKey": {
+              "type": "boolean"
+            },
             "DisplayName": {
-              "type": "null"
+              "type": "string"
             },
             "IsSummary": {
               "type": "boolean"

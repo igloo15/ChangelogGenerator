@@ -82,7 +82,7 @@ namespace ChangelogGenerator.Core
                 var category = settings.Categories.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
                 if (category != null)
                 {
-                    line.RemoveToken(token);
+                    line.RemoveToken(token, category);
                     return category.DisplayName;
                 }
             }
@@ -97,7 +97,6 @@ namespace ChangelogGenerator.Core
                 var link = settings.Links.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
                 if (link != null)
                 {
-                    line.RemoveToken(token);
                     links.Add(new GitChangelogLink(token, link));
                 }
             }

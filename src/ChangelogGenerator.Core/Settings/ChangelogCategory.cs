@@ -10,6 +10,8 @@ namespace ChangelogGenerator.Core.Settings
 
         public List<string> ReplaceTokens { get; set; } = new List<string>();
 
+        public bool ReplaceKey { get; set; } = true;
+
         public bool IsSummary { get; set; } = false;
 
         public bool IsDefault { get; set; } = false;
