@@ -1,34 +1,28 @@
 {
+  "$schema": "../ChangelogGenerator.Core/changelog.schema.json",
   "Categories": [
     {
       "Keys": [ "#Summary", "#SUMMARY" ],
       "DisplayName": null,
-      "IsSummary": true,
-      "IsDefault": false
+      "IsSummary": false
     },
     {
       "Keys": [ "#Commits" ],
       "DisplayName": "Other Commits",
-      "IsSummary": false,
       "IsDefault": true
     },
     {
       "Keys": [ "#Add", "#ADD" ],
-      "DisplayName": "Add",
-      "IsSummary": false,
-      "IsDefault": false
+      "DisplayName": "Add"
     },
     {
       "Keys": [ "#Change", "#CHANGE", "#Changes", "#CHANGES" ],
       "DisplayName": "Changes",
-      "IsSummary": false,
-      "IsDefault": false
+      "IsSummary": true
     },
     {
       "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
-      "DisplayName": "Fixed",
-      "IsSummary": false,
-      "IsDefault": false
+      "DisplayName": "Fixed"
     }
   ],
   "Links": [
@@ -37,7 +31,7 @@
       "ReplaceTokens": [ "#" ],
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
     }
-  ],    
+  ],
   "VersionFilters": [ "v" ],
   "Templates": {
     "TitleTemplate": "# Changelog",
@@ -50,7 +44,7 @@
     "EndVersionTemplate": "\n"
   },
   "ChangelogLocation": "./CHANGELOG.md",
-  "GitRepoLocation": "../../../../.",
+  "GitRepoLocation": "D:\\Development\\Projects\\Cake.igloo15",
   "UnreleasedTitle": "Unreleased",
   "GitRepoCommitLimit": -1,
   "AllCommits": true,

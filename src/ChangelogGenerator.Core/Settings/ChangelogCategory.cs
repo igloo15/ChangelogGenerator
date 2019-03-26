@@ -8,7 +8,9 @@ namespace ChangelogGenerator.Core.Settings
     {
         public List<string> Keys { get; set; } = new List<string>();
 
-        public bool IsSummaryMessage { get; set; } = false;
+        public List<string> ReplaceTokens { get; set; } = new List<string>();
+
+        public bool IsSummary { get; set; } = false;
 
         public bool IsDefault { get; set; } = false;
 

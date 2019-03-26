@@ -28,7 +28,6 @@ namespace ChangelogGenerator.Core
                 return 1;
             }
 
-
             GitChangelog changelog = GitChangelog.Generate(settings);
 
             var content = changelog.GetChangeLogText();
@@ -78,7 +77,11 @@ namespace ChangelogGenerator.Core
                 return 1;
             }
 
-            ChangelogSettings settings = JsonConvert.DeserializeObject<ChangelogSettings>(File.ReadAllText(configLocation));
+            ChangelogSettings settings = JsonConvert.DeserializeObject<ChangelogSettings>(File.ReadAllText(configLocation), new JsonSerializerSettings
+            {
+                ObjectCreationHandling = ObjectCreationHandling.Replace,
+                NullValueHandling = NullValueHandling.Ignore
+            });
 
             if (commandLineSettings.DoTest)
             {

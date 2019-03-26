@@ -20,6 +20,7 @@ namespace ChangelogGenerator.Core
 
                 category.Name = group.Key;
                 category.Items = group.ToList();
+                category.Summary = category.Items.FirstOrDefault().PartOfSummary;
                 categories.Add(category);
             }
 
@@ -31,6 +32,7 @@ namespace ChangelogGenerator.Core
             List<GitChangelogItem> items = new List<GitChangelogItem>();
 
             var defaultCategory = settings.Categories.FirstOrDefault(c => c.IsDefault)?.DisplayName;
+            var summaryCategory = settings.Categories.FirstOrDefault(c => c.IsSummary)?.DisplayName;
 
             foreach (var line in message.GetMessageLines())
             {
@@ -38,9 +40,18 @@ namespace ChangelogGenerator.Core
                 
                 GitChangelogItem cm = new GitChangelogItem();
                 cm.Commit = message;
-                cm.Category = GetCategory(settings, cm, messageLine) ?? defaultCategory;
+
+                var category = GetCategory(settings, cm, messageLine) ?? defaultCategory;
+                if (string.IsNullOrEmpty(category))
+                    continue;
+
+                if (!string.IsNullOrEmpty(summaryCategory) && category.Equals(summaryCategory))
+                    cm.PartOfSummary = true;
+
+                cm.Category = category;
                 cm.Links = GetLinkText(settings, cm, messageLine);
                 cm.Message = GetMessage(settings, cm, messageLine);
+
 
                 items.Add(cm);
             }
@@ -50,7 +61,7 @@ namespace ChangelogGenerator.Core
 
         public static string GetMessage(ChangelogSettings settings, GitChangelogItem item, GitCommitMessageLine line)
         {
-            var message = settings.Templates.IssueTemplate;
+            var message = item.PartOfSummary ? settings.Templates.SummarySentenceTemplate : settings.Templates.IssueTemplate;
 
             message = message.Replace("{Message}", line.Message);
 

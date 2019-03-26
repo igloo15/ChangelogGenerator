@@ -13,5 +13,7 @@ namespace ChangelogGenerator.Core
         public string Category { get; set; }
         
         public string Links { get; set; }
+
+        public bool PartOfSummary { get; set; }
     }
 }

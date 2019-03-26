@@ -11,6 +11,8 @@ namespace ChangelogGenerator.Core
 
         public string Name { get; set; }
 
+        public bool Summary { get; set; }
+
         public string GetText(ChangelogSettings settings)
         {
             var template = settings.Templates.CategoryTemplate;

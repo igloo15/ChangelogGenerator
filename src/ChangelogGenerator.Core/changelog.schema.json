@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Categories": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Keys": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "ReplaceTokens": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "DisplayName": {
+              "type": "null"
+            },
+            "IsSummary": {
+              "type": "boolean"
+            },
+            "IsDefault": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Keys",
+            "DisplayName"
+          ]
+        }
+      ]
+    },
+    "Links": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Keys": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "ReplaceTokens": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "UrlTemplate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Keys",
+            "ReplaceTokens",
+            "UrlTemplate"
+          ]
+        }
+      ]
+    },
+    "VersionFilters": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "Templates": {
+      "type": "object",
+      "properties": {
+        "TitleTemplate": {
+          "type": "string"
+        },
+        "VersionTemplate": {
+          "type": "string"
+        },
+        "SummarySentenceTemplate": {
+          "type": "string"
+        },
+        "CategoryTemplate": {
+          "type": "string"
+        },
+        "IssueTemplate": {
+          "type": "string"
+        },
+        "LinkTemplate": {
+          "type": "string"
+        },
+        "NoIssueTemplate": {
+          "type": "string"
+        },
+        "EndCategoryTemplate": {
+          "type": "string"
+        },
+        "EndVersionTemplate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TitleTemplate",
+        "VersionTemplate",
+        "CategoryTemplate",
+        "IssueTemplate",
+        "LinkTemplate",
+        "NoIssueTemplate",
+        "EndCategoryTemplate",
+        "EndVersionTemplate"
+      ]
+    },
+    "ChangelogLocation": {
+      "type": "string"
+    },
+    "GitRepoLocation": {
+      "type": "string"
+    },
+    "UnreleasedTitle": {
+      "type": "string"
+    },
+    "GitRepoCommitLimit": {
+      "type": "integer"
+    },
+    "AllCommits": {
+      "type": "boolean"
+    },
+    "TestMode": {
+      "type": "boolean"
+    },
+    "LatestCodeBranch": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Categories",
+    "Links",
+    "VersionFilters",
+    "Templates",
+    "ChangelogLocation"
+  ]
+}

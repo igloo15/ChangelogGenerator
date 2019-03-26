@@ -27,8 +27,23 @@ namespace ChangelogGenerator.Core
             foreach(var version in Versions)
             {
                 sb.AppendLine(version.GetText(Settings));
+                var summaryCategory = version.Categories.FirstOrDefault(c => c.Summary);
+
+                if(summaryCategory != null)
+                {
+                    sb.AppendLine(summaryCategory.GetText(Settings));
+                    foreach (var item in summaryCategory.Items)
+                    {
+                        sb.Append($"{item.Message}. ");
+                    }
+                    sb.AppendLine(Settings.Templates.EndCategoryTemplate);
+                }
+
                 foreach(var category in version.Categories)
                 {
+                    if (category.Summary)
+                        continue;
+
                     sb.AppendLine(category.GetText(Settings));
                     foreach(var item in category.Items)
                     {

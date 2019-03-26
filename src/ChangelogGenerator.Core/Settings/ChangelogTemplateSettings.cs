@@ -10,6 +10,8 @@ namespace ChangelogGenerator.Core.Settings
 
         public string VersionTemplate { get; set; } = "## {Version}";
 
+        public string SummarySentenceTemplate { get; set; } = "{Message}. ";
+
         public string CategoryTemplate { get; set; } = "### {Category}";
 
         public string IssueTemplate { get; set; } = "* {Message} {Links}";
