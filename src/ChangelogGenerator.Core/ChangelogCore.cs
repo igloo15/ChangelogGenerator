@@ -9,14 +9,27 @@ using System.Text;
 
 namespace ChangelogGenerator.Core
 {
+    /// <summary>
+    /// The core to interact with when making a changelog
+    /// </summary>
     public class ChangelogCore
     {
+        /// <summary>
+        /// Pass in command line arguments to use changelog
+        /// </summary>
+        /// <param name="arguments">The commandline arguments</param>
+        /// <returns>The return code</returns>
         public int GenerateChangelog(string[] arguments)
         {
             return Parser.Default.ParseArguments<ChangelogCommandlineSettings>(arguments)
                 .MapResult(o => GenerateChangelog(o), _ => 1);
         }
 
+        /// <summary>
+        /// Pass in your changelog settings to generate a changelog
+        /// </summary>
+        /// <param name="settings">The settings to be used during generation</param>
+        /// <returns>The return code</returns>
         public int GenerateChangelog(ChangelogSettings settings)
         {
             var gitFolder = Path.Combine(settings.GitRepoLocation, ".git");

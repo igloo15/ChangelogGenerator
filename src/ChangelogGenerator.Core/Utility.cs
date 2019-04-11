@@ -63,7 +63,7 @@ namespace ChangelogGenerator.Core
             {
                 foreach (var tag in repo.Tags)
                 {
-                    if (settings.VersionFilters.Any(v => tag.FriendlyName.StartsWith(v)))
+                    if (settings.VersionFilter.IsMatch(tag.FriendlyName))
                     {
                         versions.Add(CreateVersion(tag.FriendlyName, previousTag?.CanonicalName, tag.CanonicalName, settings));
 
@@ -81,6 +81,39 @@ namespace ChangelogGenerator.Core
             return versions;
         }
 
+        public static bool IsMatch(this FilterSettings settings, string value)
+        {
+            return settings.Keys.Any(k => value.StartsWith(k, settings.MatchCase ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase));
+        }
+
+        public static string CleanValue(this FilterSettings settings, string value)
+        {
+            foreach(var token in settings.RemoveTokens)
+            {
+                value = value.Replace(token, "");
+            }
+
+            if(settings.RemoveAllKey)
+            {
+                var matchingKeys = settings.Keys.Where(k => value.StartsWith(k, settings.MatchCase ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase));
+
+                if(!settings.MatchCase)
+                {
+                    var length = matchingKeys.Max(k => k.Length);
+                    value = value.Substring(length);
+                }
+                else
+                {
+                    foreach (var matchedKey in matchingKeys)
+                    {
+                        value = value.Replace(matchedKey, "");
+                    }
+                }
+            }
+
+            return value;
+        }
+
         private static GitVersion CreateVersion(string name, string fromName, string toName, ChangelogSettings settings)
         {
             var versionName = string.IsNullOrEmpty(name) ? settings.UnreleasedTitle : name;
@@ -91,5 +124,7 @@ namespace ChangelogGenerator.Core
 
             return new GitVersion(versionName, commits, categories);
         }
+
+
     }
 }

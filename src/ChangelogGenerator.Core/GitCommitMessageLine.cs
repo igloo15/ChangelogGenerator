@@ -9,24 +9,21 @@ namespace ChangelogGenerator.Core
     {
         public string Message { get; set; }
 
+        public string CleanMessage { get; set; }
+
         public string[] Tokens { get; set; }
 
         public GitCommitMessageLine(string message)
         {
             Message = message;
+            CleanMessage = message;
 
             Tokens = message.Split(' ');
         }
 
-        public void RemoveToken(string currentToken, ChangelogCategory category)
+        public void ReplaceMessagePart(string currentMessagePart, string newMessagePart)
         {
-            if (category.ReplaceKey)
-                Message = Message.Replace(currentToken, "");
-
-            foreach(var token in category.ReplaceTokens)
-            {
-                Message = Message.Replace(token, "");
-            }
+            CleanMessage = CleanMessage.Replace(currentMessagePart, newMessagePart);
         }
     }
 }

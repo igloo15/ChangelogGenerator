@@ -3,7 +3,10 @@ using System;
 
 namespace ChangelogGenerator.Tool
 {
-    class Program
+    /// <summary>
+    /// Command line entry for generating changelog
+    /// </summary>
+    static class Program
     {
         static void Main(string[] args)
         {

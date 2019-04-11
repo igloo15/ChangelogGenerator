@@ -2,37 +2,52 @@
   "$schema": "../ChangelogGenerator.Core/changelog.schema.json",
   "Categories": [
     {
-      "Keys": [ "#Summary", "#SUMMARY" ],
+      "Filter": {
+        "Keys": [ "#Summary" ]
+      },
       "DisplayName": null,
       "IsSummary": false
     },
     {
-      "Keys": [ "#Commits" ],
+      "Filter": {
+        "Keys": [ "#Commits" ]
+      },
       "DisplayName": "Other Commits",
       "IsDefault": true
     },
     {
-      "Keys": [ "#Add", "#ADD" ],
+      "Filter": {
+        "Keys": [ "#Add" ]
+      },
       "DisplayName": "Add"
     },
     {
-      "Keys": [ "#Change", "#CHANGE", "#Changes", "#CHANGES" ],
+      "Filter": {
+        "Keys": [ "#Change", "#Changes" ]
+      },
       "DisplayName": "Changes",
       "IsSummary": true
     },
     {
-      "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
+      "Filter": {
+        "Keys": [ "#FIXED", "#FIX" ]
+      },
       "DisplayName": "Fixed"
     }
   ],
   "Links": [
     {
-      "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
-      "ReplaceTokens": [ "#" ],
+      "Filter": {
+        "Keys": [ "#FIXED", "#FIX", "#Fixed", "#Fix" ],
+        "RemoveTokens": [ "#" ],
+        "RemoveAllKey":  false
+      },      
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
     }
   ],
-  "VersionFilters": [ "v" ],
+  "VersionFilter": {
+    "Keys":[ "v" ]
+  },
   "Templates": {
     "TitleTemplate": "# Changelog",
     "VersionTemplate": "## {Version}",
@@ -41,13 +56,15 @@
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
     "NoIssueTemplate": " N/A ",
     "EndCategoryTemplate": "\n",
-    "EndVersionTemplate": "\n"
+    "EndVersionTemplate": "\n",
+    "EndChangelogTemplate": "",
+    "SummarySentenceTemplate": "{Message} "
   },
   "ChangelogLocation": "./CHANGELOG.md",
   "GitRepoLocation": "D:\\Development\\Projects\\Cake.igloo15",
   "UnreleasedTitle": "Unreleased",
   "GitRepoCommitLimit": -1,
   "AllCommits": true,
-  "TestMode": false,
+  "TestMode": true,
   "LatestCodeBranch": "develop"
 }

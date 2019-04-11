@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Core</BaseOutputPath>
-    <OutputType>Library</OutputType>
-    <WriteVersionInfoToBuildLog>true</WriteVersionInfoToBuildLog>
-    <UpdateVersionProperties>true</UpdateVersionProperties>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\$(MSBuildProjectName)</BaseOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>

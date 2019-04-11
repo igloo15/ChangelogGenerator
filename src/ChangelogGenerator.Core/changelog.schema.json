@@ -1,6 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "definitions": {
+    "FilterSettings": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RemoveTokens": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RemoveAllKey": {
+          "type": "boolean"
+        },
+        "MatchCase": {
+          "type": "boolean"
+        }
+      },
+      "required": ["Keys"]
+    }
+  },
   "properties": {
     "Categories": {
       "type": "array",
@@ -8,24 +38,8 @@
         {
           "type": "object",
           "properties": {
-            "Keys": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "ReplaceTokens": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "ReplaceKey": {
-              "type": "boolean"
+            "Filter": {
+              "$ref": "#/definitions/FilterSettings"
             },
             "DisplayName": {
               "type": "string"
@@ -38,7 +52,7 @@
             }
           },
           "required": [
-            "Keys",
+            "Filter",
             "DisplayName"
           ]
         }
@@ -50,41 +64,22 @@
         {
           "type": "object",
           "properties": {
-            "Keys": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "ReplaceTokens": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
+            "Filter": {
+              "$ref": "#/definitions/FilterSettings"
             },
             "UrlTemplate": {
               "type": "string"
             }
           },
           "required": [
-            "Keys",
-            "ReplaceTokens",
+            "Filter",
             "UrlTemplate"
           ]
         }
       ]
     },
     "VersionFilters": {
-      "type": "array",
-      "items": [
-        {
-          "type": "string"
-        }
-      ]
+      "$ref": "#/definitions/FilterSettings"
     },
     "Templates": {
       "type": "object",
@@ -114,6 +109,9 @@
           "type": "string"
         },
         "EndVersionTemplate": {
+          "type": "string"
+        },
+        "EndChangelogTemplate": {
           "type": "string"
         }
       },

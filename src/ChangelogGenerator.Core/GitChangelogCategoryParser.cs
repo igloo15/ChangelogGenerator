@@ -63,7 +63,7 @@ namespace ChangelogGenerator.Core
         {
             var message = item.PartOfSummary ? settings.Templates.SummarySentenceTemplate : settings.Templates.IssueTemplate;
 
-            message = message.Replace("{Message}", line.Message);
+            message = message.Replace("{Message}", line.CleanMessage);
 
             message = message.Replace("{Links}", item.Links);
 
@@ -79,10 +79,11 @@ namespace ChangelogGenerator.Core
         {
             foreach (var token in line.Tokens)
             {
-                var category = settings.Categories.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
+                var category = settings.Categories.FirstOrDefault(c => c.Filter.IsMatch(token));
                 if (category != null)
                 {
-                    line.RemoveToken(token, category);
+                    var cleanToken = category.Filter.CleanValue(token);
+                    line.ReplaceMessagePart(token, cleanToken);
                     return category.DisplayName;
                 }
             }
@@ -94,7 +95,7 @@ namespace ChangelogGenerator.Core
             List<GitChangelogLink> links = new List<GitChangelogLink>();
             foreach (var token in line.Tokens)
             {
-                var link = settings.Links.FirstOrDefault(c => c.Keys.Any(k => token.StartsWith(k)));
+                var link = settings.Links.FirstOrDefault(c => c.Filter.IsMatch(token));
                 if (link != null)
                 {
                     links.Add(new GitChangelogLink(token, link));

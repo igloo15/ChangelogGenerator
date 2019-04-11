@@ -9,11 +9,14 @@ namespace ChangelogGenerator.Core
     {
         public string Token { get; set; }
 
+        public string CleanToken { get; set; }
+
         public ChangelogLink LinkSettings { get; set; }
 
         public GitChangelogLink(string token, ChangelogLink settings)
         {
             Token = token;
+            CleanToken = settings.Filter.CleanValue(token);
             LinkSettings = settings;
         }
 
@@ -22,17 +25,11 @@ namespace ChangelogGenerator.Core
             var url = LinkSettings.UrlTemplate;
             var message = settings.Templates.LinkTemplate;
 
-            var cleanToken = Token;
-            foreach(var key in LinkSettings.ReplaceTokens)
-            {
-                cleanToken = cleanToken.Replace(key, "");
-            }
-
             url = url.Replace("{LinkKey}", Token);
             message = message.Replace("{LinkKey}", Token);
 
-            url = url.Replace("{LinkCleanKey}", cleanToken);
-            message = message.Replace("{LinkCleanKey}", cleanToken);
+            url = url.Replace("{LinkCleanKey}", CleanToken);
+            message = message.Replace("{LinkCleanKey}", CleanToken);
 
             message = message.Replace("{Url}", url);
 
