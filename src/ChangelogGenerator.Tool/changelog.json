@@ -61,7 +61,7 @@
     "SummarySentenceTemplate": "{Message} "
   },
   "ChangelogLocation": "./CHANGELOG.md",
-  "GitRepoLocation": "D:\\Development\\Projects\\Cake.igloo15",
+  "GitRepoLocation": ".",
   "UnreleasedTitle": "Unreleased",
   "GitRepoCommitLimit": -1,
   "AllCommits": true,

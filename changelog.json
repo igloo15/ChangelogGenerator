@@ -1,53 +1,64 @@
 {
+  "$schema": "./src/ChangelogGenerator.Core/changelog.schema.json",
   "Categories": [
     {
-      "Keys": [
-        "#Add",
-        "#ADD",
-        "#add"
-      ],
-      "ReplaceTokens": [],
-      "ReplaceKey": true,
-      "IsSummary": false,
-      "IsDefault": false,
+      "Filter": {
+        "Keys": [ "#Summary" ]
+      },
+      "DisplayName": "",
+      "IsSummary": true
+    },
+    {
+      "Filter": {
+        "Keys": [ "#Commits" ]
+      },
+      "DisplayName": "Other Commits",
+      "IsDefault": true
+    },
+    {
+      "Filter": {
+        "Keys": [ "#Add" ]
+      },
       "DisplayName": "Add"
     },
     {
-      "Keys": [
-        "#Changes"
-      ],
-      "ReplaceTokens": [],
-      "ReplaceKey": true,
-      "IsSummary": false,
-      "IsDefault": false,
-      "DisplayName": "Other Changes"
+      "Filter": {
+        "Keys": [ "#Change", "#Changes" ]
+      },
+      "DisplayName": "Changes",
+      "IsSummary": false
     },
     {
-      "Keys": [
-        "#Summary"
-      ],
-      "ReplaceTokens": [],
-      "ReplaceKey": true,
-      "IsSummary": true,
-      "IsDefault": false,
-      "DisplayName": "Summary"
+      "Filter": {
+        "Keys": [ "#FIXED", "#FIX" ]
+      },
+      "DisplayName": "Fixed"
     }
   ],
-  "Links": [],
-  "VersionFilters": [
-    "v",
-    "V"
+  "Links": [
+    {
+      "Filter": {
+        "Keys": [ "#issue" ],
+        "RemoveTokens": [ "#issue" ],
+        "RemoveAllKey":  false
+      },      
+      "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
+    }
   ],
+  "VersionFilter": {
+    "Keys":[ "v" ]
+  },
   "Templates": {
     "TitleTemplate": "# Changelog",
     "VersionTemplate": "## {Version}",
-    "SummarySentenceTemplate": "{Message}. ",
     "CategoryTemplate": "### {Category}",
     "IssueTemplate": "* {Message} {Links}",
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
-    "NoIssuesTemplate": " N/A ",
+    "NoIssueTemplate": " N/A ",
+    "EndCategoryTemplate": "\n",
     "EndVersionTemplate": "\n",
-    "EndCategoryTemplate": "\n"
+    "EndChangelogTemplate": "",
+    "SummarySentenceTemplate": "{Message} "
   },
   "ChangelogLocation": "./CHANGELOG.md",
   "GitRepoLocation": ".",

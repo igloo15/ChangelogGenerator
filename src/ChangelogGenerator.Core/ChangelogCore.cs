@@ -15,6 +15,15 @@ namespace ChangelogGenerator.Core
     public class ChangelogCore
     {
         /// <summary>
+        /// Generate a changelog based on config
+        /// </summary>
+        /// <returns>The return code</returns>
+        public int GenerateChangelog()
+        {
+            return GenerateChangelog(new string[]{});
+        }
+
+        /// <summary>
         /// Pass in command line arguments to use changelog
         /// </summary>
         /// <param name="arguments">The commandline arguments</param>

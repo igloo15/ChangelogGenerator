@@ -1,5 +1,7 @@
 # [ChangelogGenerator.Core](./README.md)
 
+## Types
+
 - [`ChangelogCore`](./ChangelogCore.md)
-- Core
+	- The core to interact with when making a changelog
 

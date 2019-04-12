@@ -18,8 +18,7 @@ This allows you to link to a specified place online when a git commit line match
 
 | Type | Name | Summary | 
 | --- | --- | --- | 
-| [List](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1)\<[String](https://docs.microsoft.com/en-us/dotnet/api/System.String)> | Keys |  | 
-| [List](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1)\<[String](https://docs.microsoft.com/en-us/dotnet/api/System.String)> | ReplaceTokens |  | 
+| [FilterSettings](./FilterSettings.md) | Filter | The filter on a git commit line that must match for the link to be produced | 
 | [String](https://docs.microsoft.com/en-us/dotnet/api/System.String) | UrlTemplate | The template of the Url for this key | 
 
 

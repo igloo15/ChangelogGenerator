@@ -1,7 +1,10 @@
-#l "nuget:?package=Cake.igloo15.Scripts.Bundle.CSharp&version=1.0.0"
+#l "nuget:?package=Cake.igloo15.Scripts.Bundle.CSharp&version=1.1.0-dev0002"
 
 var target = Argument<string>("target", "Default");
 
+AddSetup((data) => {
+    data["Markdown-Generator-Filter"] = "./dist/**/publish/Changelog*.dll";
+});
 
 Task("Pack")
     .IsDependentOn("Standard-All")

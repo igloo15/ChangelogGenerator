@@ -78,7 +78,7 @@
         }
       ]
     },
-    "VersionFilters": {
+    "VersionFilter": {
       "$ref": "#/definitions/FilterSettings"
     },
     "Templates": {

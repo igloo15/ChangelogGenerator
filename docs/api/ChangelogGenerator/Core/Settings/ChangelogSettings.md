@@ -11,7 +11,7 @@ The main Changelog Config
 
 | Name | Summary | 
 | --- | --- | 
-| ChangelogSettings (  ) |  | 
+| ChangelogSettings (  ) | Constructs a default Changelog config | 
 
 
 ## Properties
@@ -28,6 +28,6 @@ The main Changelog Config
 | [ChangelogTemplateSettings](./ChangelogTemplateSettings.md) | Templates | Defines the templates for how the changelog should look | 
 | [Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean) | TestMode | Determines if this changelog generation is running in test mode | 
 | [String](https://docs.microsoft.com/en-us/dotnet/api/System.String) | UnreleasedTitle | Defines the title of the unreleased git changelog items | 
-| [List](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1)\<[String](https://docs.microsoft.com/en-us/dotnet/api/System.String)> | VersionFilters |  | 
+| [FilterSettings](./FilterSettings.md) | VersionFilter | Defines what is a version from the tags | 
 
 
