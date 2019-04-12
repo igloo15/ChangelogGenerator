@@ -1,6 +1,7 @@
 # Changelog
 ## Unreleased
 ### Add
+*  new type of filtering for versions, categories, and links
 *  replace key and replace token list added to line and link parsing
 *  summary categories now work
 *  schema for json added

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>$(MSBuildProjectName)</RootNamespace>
-    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\$(MSBuildProjectName)</BaseOutputPath>
+    <BaseOutputPath>$(MSBuildProjectDirectory)\..\..\dist\$(MSBuildProjectName)</BaseOutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 

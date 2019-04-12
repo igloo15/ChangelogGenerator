@@ -6,7 +6,7 @@
     <AssemblyName>ChangelogGenerator.Tool</AssemblyName>
     <AssemblyTitle>ChangelogGenerator</AssemblyTitle>
     <RootNamespace>ChangelogGenerator.Tool</RootNamespace>
-    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Tool</BaseOutputPath>
+    <BaseOutputPath>$(MSBuildProjectDirectory)\..\..\dist\ChangelogGenerator.Tool</BaseOutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 

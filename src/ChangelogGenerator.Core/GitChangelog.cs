@@ -39,7 +39,7 @@ namespace ChangelogGenerator.Core
                     sb.AppendLine(Settings.Templates.EndCategoryTemplate);
                 }
 
-                foreach(var category in version.Categories)
+                foreach(var category in version.Categories.OrderBy(c => c.Name))
                 {
                     if (category.Summary)
                         continue;
