@@ -47,7 +47,7 @@ See the config schema [here](./src/ChangelogGenerator.Core/changelog.schema.json
       "Filter": {
         "Keys": [ "#Summary" ]
       },
-      "DisplayName": null,
+      "DisplayName": "Summary",
       "IsSummary": false
     },
     {

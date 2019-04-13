@@ -32,6 +32,19 @@ namespace ChangelogGenerator.Core.Settings
                     IsSummary = true
                 }
             };
+
+            Links = new List<ChangelogLink>
+            {
+                new ChangelogLink
+                {
+                    Filter = new FilterSettings("#issue")
+                    {
+                        RemoveTokens = new List<string>{ "#" },
+                        RemoveAllKey = false
+                    },
+                    UrlTemplate = "https://github.com/temp_user/temp_project/issues/{LinkCleanKey}"
+                }
+            }
         }
 
         /// <summary>
