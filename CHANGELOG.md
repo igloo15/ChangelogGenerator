@@ -1,40 +1,32 @@
 # Changelog
-## v1.0.1
-### Fixed
-*  fixed #issue-2 [issue-2](https://github.com/igloo15/ChangelogGenerator/issues/issue-2)
-*  fixed #issue-1 [issue-1](https://github.com/igloo15/ChangelogGenerator/issues/issue-1)
-*  fixed incorrect label for NoIssuesTemplate in schema and example changelog configs
-
+## Unreleased
+### Summary
+Version 1.0.1 is a bug fix release that fixes two issues with links not showing up correctly and categories not being added if they are empty. 
 
 ### Add
 *  option to include or not include empty templates
 
 
 ### Changes
+*  update build script
 *  appveyor config updated to only build master
-*  update changelog settings getting ready to work on #issue-1 #issue-2 [issue-1](https://github.com/igloo15/ChangelogGenerator/issues/issue-1) [issue-2](https://github.com/igloo15/ChangelogGenerator/issues/issue-2)
+*  update changelog settings getting ready to work on   [issue-1](https://github.com/igloo15/ChangelogGenerator/issues/issue-1) [issue-2](https://github.com/igloo15/ChangelogGenerator/issues/issue-2)
+
+
+### Fixed
+*  fixed  [issue-2](https://github.com/igloo15/ChangelogGenerator/issues/issue-2)
+*  fixed  [issue-1](https://github.com/igloo15/ChangelogGenerator/issues/issue-1)
+*  fixed incorrect label for NoIssuesTemplate in schema and example changelog configs
+
+
+### Other Commits
+*  N/A 
 
 
 
 
 ## v1.0.0
-### Other Commits
-* Merge branch 'develop'
-* #Update Parsing GitCommits to GitChangelogItems
-
-
-### Fixed
-*  schema requirements fixed
-*  change log schema fixed so versionfilters is versionfilter
-*  build output fixed
-*  category order is determined by name so order is always consistent
-*  csproj file for building
-*  fix new incubator version having a bad Dump Method
-*  If directory is empty then use current directory
-*  correct to be accurate nuget package id
-*  bad template for category in json file
-*  Changelog setting file is updated to be correct
-*  Remove empty lines
+### Summary
 
 
 ### Add
@@ -55,7 +47,7 @@
 *  GitChangelogItem message parsed
 *  new git classes to parse commits into changelog items
 *  New GitCommit Class added to break out individual git commits
-* ed basic code to get GitVersions and GitCommits
+*  basic code to get GitVersions and GitCommits
 
 
 ### Changes
@@ -68,11 +60,46 @@
 *  Remove GitCommitParser
 
 
+### Fixed
+*  schema requirements fixed
+*  change log schema fixed so versionfilters is versionfilter
+*  build output fixed
+*  category order is determined by name so order is always consistent
+*  csproj file for building
+*  fix new incubator version having a bad Dump Method
+*  If directory is empty then use current directory
+*  correct to be accurate nuget package id
+*  bad template for category in json file
+*  Changelog setting file is updated to be correct
+*  Remove empty lines
+
+
+### Other Commits
+* Merge branch 'develop'
+* #Update Parsing GitCommits to GitChangelogItems
+
+
 
 
 ## v0.1.0
+### Summary
+
+
+### Add
+*  N/A 
+
+
+### Changes
+*  N/A 
+
+
+### Fixed
+*  N/A 
+
+
 ### Other Commits
 * #Initial Commit
+
 
 
 

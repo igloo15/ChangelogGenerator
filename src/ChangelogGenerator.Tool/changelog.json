@@ -5,7 +5,7 @@
       "Filter": {
         "Keys": [ "#Summary" ]
       },
-      "DisplayName": "",
+      "DisplayName": "Summary",
       "IsSummary": true
     },
     {
@@ -60,8 +60,8 @@
     "EndChangelogTemplate": "",
     "SummarySentenceTemplate": "{Message} "
   },
-  "ChangelogLocation": "./CHANGELOG.md",
-  "GitRepoLocation": ".",
+  "ChangelogLocation": "../../../../CHANGELOG.md",
+  "GitRepoLocation": "../../../..",
   "UnreleasedTitle": "Unreleased",
   "GitRepoCommitLimit": -1,
   "AllCommits": true,
