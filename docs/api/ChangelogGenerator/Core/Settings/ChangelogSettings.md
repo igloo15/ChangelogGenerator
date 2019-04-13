@@ -23,6 +23,7 @@ The main Changelog Config
 | [String](https://docs.microsoft.com/en-us/dotnet/api/System.String) | ChangelogLocation | Defines the location of where the changelog should be written | 
 | [Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32) | GitRepoCommitLimit | Defines how far back the changelog should search for git commits and tags | 
 | [String](https://docs.microsoft.com/en-us/dotnet/api/System.String) | GitRepoLocation | Defines the location of the gitrepo relative to this changelog | 
+| [Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean) | IncludeEmptyCategories | Include categories that have no items | 
 | [String](https://docs.microsoft.com/en-us/dotnet/api/System.String) | LatestCodeBranch | Determines the name of the latest code branch for use when calculating unreleased git items | 
 | [List](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1)\<[ChangelogLink](./ChangelogLink.md)> | Links | Defines links that can appear on each changelog item | 
 | [ChangelogTemplateSettings](./ChangelogTemplateSettings.md) | Templates | Defines the templates for how the changelog should look | 
