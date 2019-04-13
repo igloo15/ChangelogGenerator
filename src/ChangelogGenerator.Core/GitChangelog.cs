@@ -53,6 +53,7 @@ namespace ChangelogGenerator.Core
                 }
                 sb.AppendLine(Settings.Templates.EndVersionTemplate);
             }
+            sb.AppendLine(Settings.Templates.EndChangelogTemplate);
 
             return sb.ToString();
         }
