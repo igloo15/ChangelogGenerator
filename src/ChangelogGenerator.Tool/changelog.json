@@ -39,7 +39,7 @@
     {
       "Filter": {
         "Keys": [ "#issue-" ],
-        "RemoveTokens": [ "#issue-" ],
+        "RemoveTokens": [ "#" ],
         "RemoveAllKey":  false
       },      
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
@@ -54,7 +54,7 @@
     "CategoryTemplate": "### {Category}",
     "IssueTemplate": "* {Message} {Links}",
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
-    "NoIssueTemplate": " N/A ",
+    "NoIssuesTemplate": "*  N/A ",
     "EndCategoryTemplate": "\n",
     "EndVersionTemplate": "\n",
     "EndChangelogTemplate": "",

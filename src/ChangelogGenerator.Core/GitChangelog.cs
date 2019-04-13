@@ -49,6 +49,10 @@ namespace ChangelogGenerator.Core
                     {
                         sb.AppendLine($"{item.Message}");
                     }
+                    
+                    if(category.Items.Count == 0)
+                        sb.AppendLine(Settings.Templates.NoIssuesTemplate);
+
                     sb.AppendLine(Settings.Templates.EndCategoryTemplate);
                 }
                 sb.AppendLine(Settings.Templates.EndVersionTemplate);

@@ -80,6 +80,11 @@ namespace ChangelogGenerator.Core.Settings
         public bool AllCommits { get; set; } = true;
 
         /// <summary>
+        /// Include categories that have no items
+        /// </summary>
+        public bool IncludeEmptyCategories { get; set; } = true;
+
+        /// <summary>
         /// Determines if this changelog generation is running in test mode
         /// </summary>
         public bool TestMode { get; set; } = false;

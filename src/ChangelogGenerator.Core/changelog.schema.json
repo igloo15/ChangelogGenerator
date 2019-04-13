@@ -102,7 +102,7 @@
         "LinkTemplate": {
           "type": "string"
         },
-        "NoIssueTemplate": {
+        "NoIssuesTemplate": {
           "type": "string"
         },
         "EndCategoryTemplate": {
@@ -121,7 +121,7 @@
         "CategoryTemplate",
         "IssueTemplate",
         "LinkTemplate",
-        "NoIssueTemplate",
+        "NoIssuesTemplate",
         "EndCategoryTemplate",
         "EndVersionTemplate"
       ]
@@ -139,6 +139,9 @@
       "type": "integer"
     },
     "AllCommits": {
+      "type": "boolean"
+    },
+    "IncludeEmptyCategories":{
       "type": "boolean"
     },
     "TestMode": {
