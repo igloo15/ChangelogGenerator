@@ -30,7 +30,7 @@
     },
     {
       "Filter": {
-        "Keys": [ "#FIXED", "#FIX" ]
+        "Keys": [ "#FIXED", "#FIX", "#FIXES" ]
       },
       "DisplayName": "Fixed"
     }
@@ -38,8 +38,8 @@
   "Links": [
     {
       "Filter": {
-        "Keys": [ "#issue" ],
-        "RemoveTokens": [ "#issue" ],
+        "Keys": [ "#issue-" ],
+        "RemoveTokens": [ "#issue-" ],
         "RemoveAllKey":  false
       },      
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
