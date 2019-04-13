@@ -5,7 +5,7 @@
       "Filter": {
         "Keys": [ "#Summary" ]
       },
-      "DisplayName": "",
+      "DisplayName": "Summary",
       "IsSummary": true
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "Filter": {
-        "Keys": [ "#FIXED", "#FIX" ]
+        "Keys": [ "#FIXED", "#FIX", "#FIXES" ]
       },
       "DisplayName": "Fixed"
     }
@@ -38,8 +38,8 @@
   "Links": [
     {
       "Filter": {
-        "Keys": [ "#issue" ],
-        "RemoveTokens": [ "#issue" ],
+        "Keys": [ "#issue-" ],
+        "RemoveTokens": [ "#" ],
         "RemoveAllKey":  false
       },      
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
@@ -54,7 +54,7 @@
     "CategoryTemplate": "### {Category}",
     "IssueTemplate": "* {Message} {Links}",
     "LinkTemplate": "[{LinkCleanKey}]({Url})",
-    "NoIssueTemplate": " N/A ",
+    "NoIssuesTemplate": "*  N/A ",
     "EndCategoryTemplate": "\n",
     "EndVersionTemplate": "\n",
     "EndChangelogTemplate": "",

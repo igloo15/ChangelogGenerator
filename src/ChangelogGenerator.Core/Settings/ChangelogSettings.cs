@@ -32,6 +32,19 @@ namespace ChangelogGenerator.Core.Settings
                     IsSummary = true
                 }
             };
+
+            Links = new List<ChangelogLink>
+            {
+                new ChangelogLink
+                {
+                    Filter = new FilterSettings("#issue")
+                    {
+                        RemoveTokens = new List<string>{ "#" },
+                        RemoveAllKey = false
+                    },
+                    UrlTemplate = "https://github.com/temp_user/temp_project/issues/{LinkCleanKey}"
+                }
+            };
         }
 
         /// <summary>
@@ -78,6 +91,11 @@ namespace ChangelogGenerator.Core.Settings
         /// Determines if all commits should be searched
         /// </summary>
         public bool AllCommits { get; set; } = true;
+
+        /// <summary>
+        /// Include categories that have no items
+        /// </summary>
+        public bool IncludeEmptyCategories { get; set; } = true;
 
         /// <summary>
         /// Determines if this changelog generation is running in test mode

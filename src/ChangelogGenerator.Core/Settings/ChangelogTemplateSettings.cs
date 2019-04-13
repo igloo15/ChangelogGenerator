@@ -42,7 +42,7 @@ namespace ChangelogGenerator.Core.Settings
         /// <summary>
         /// What to write if no items in a specific category or version
         /// </summary>
-        public string NoIssuesTemplate { get; set; } = " N/A ";
+        public string NoIssuesTemplate { get; set; } = "*  N/A ";
 
         /// <summary>
         /// What should be added at the end of a version section

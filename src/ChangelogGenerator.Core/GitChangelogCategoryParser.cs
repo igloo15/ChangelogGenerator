@@ -14,14 +14,18 @@ namespace ChangelogGenerator.Core
             var categories = new List<GitChangelogCategory>();
             List<GitChangelogItem> items = commits.SelectMany(c => ParseCommitMessages(c, settings)).ToList();
 
-            foreach(var group in items.GroupBy(i => i.Category))
+            foreach(var categorySetting in settings.Categories)
             {
+                var categoryItems = items.Where(i => i.Category == categorySetting.DisplayName).ToList();
+
                 GitChangelogCategory category = new GitChangelogCategory();
 
-                category.Name = group.Key;
-                category.Items = group.ToList();
-                category.Summary = category.Items.FirstOrDefault().PartOfSummary;
-                categories.Add(category);
+                category.Name = categorySetting.DisplayName;
+                category.Items = categoryItems;
+                category.Summary = categorySetting.IsSummary;
+
+                if(settings.IncludeEmptyCategories || category.Items.Count > 0)
+                    categories.Add(category);
             }
 
             return categories;
@@ -99,6 +103,7 @@ namespace ChangelogGenerator.Core
                 if (link != null)
                 {
                     links.Add(new GitChangelogLink(token, link));
+                    line.ReplaceMessagePart(token, "");
                 }
             }
             StringBuilder sb = new StringBuilder();

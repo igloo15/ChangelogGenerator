@@ -18,6 +18,7 @@
     <PackageTags>mqttnet;mqttserver;server;dotnet;netstandard;diagnostics</PackageTags>
     <RepositoryUrl>https://github.com/igloo15/ChangelogGenerator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>See $(PackageProjectUrl)/blob/master/CHANGELOG.md for release notes</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
