@@ -1,4 +1,4 @@
-#l "nuget:?package=Cake.igloo15.Scripts.Bundle.CSharp&version=1.1.0-dev0002"
+#l "nuget:?package=Cake.igloo15.Scripts.Bundle.CSharp&version=1.1.0"
 
 var target = Argument<string>("target", "Default");
 
