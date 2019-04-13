@@ -1,13 +1,17 @@
 # Changelog
-## Unreleased
+## v1.0.1
 ### Summary
 Version 1.0.1 is a bug fix release that fixes two issues with links not showing up correctly and categories not being added if they are empty. 
 
 ### Add
+*  release notes added to packages
+*  default config now includes a default link
 *  option to include or not include empty templates
 
 
 ### Changes
+*  readme updated to latest
+*  fix tool changelog example to include output to correct folder
 *  update build script
 *  appveyor config updated to only build master
 *  update changelog settings getting ready to work on   [issue-1](https://github.com/igloo15/ChangelogGenerator/issues/issue-1) [issue-2](https://github.com/igloo15/ChangelogGenerator/issues/issue-2)

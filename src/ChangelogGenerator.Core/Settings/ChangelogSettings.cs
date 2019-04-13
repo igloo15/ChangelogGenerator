@@ -44,7 +44,7 @@ namespace ChangelogGenerator.Core.Settings
                     },
                     UrlTemplate = "https://github.com/temp_user/temp_project/issues/{LinkCleanKey}"
                 }
-            }
+            };
         }
 
         /// <summary>
