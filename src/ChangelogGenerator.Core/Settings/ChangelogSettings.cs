@@ -1,33 +1,92 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ChangelogGenerator.Core.Settings
 {
+    /// <summary>
+    /// The main Changelog Config
+    /// </summary>
     public class ChangelogSettings
     {
+        /// <summary>
+        /// Constructs a default Changelog config
+        /// </summary>
+        public ChangelogSettings()
+        {
+            Categories = new List<ChangelogCategory>
+            {
+                new ChangelogCategory
+                {
+                    Filter = new FilterSettings("#Add"),
+                    DisplayName = "Add"
+                },
+                new ChangelogCategory
+                {
+                    Filter = new FilterSettings("#Changes"),
+                    DisplayName = "Other Changes",
+                    IsDefault = false
+                },
+                new ChangelogCategory
+                {
+                    Filter = new FilterSettings("#Summary"),
+                    DisplayName = "Summary",
+                    IsSummary = true
+                }
+            };
+        }
+
+        /// <summary>
+        /// The categories of a specific version in a changelog
+        /// </summary>
         public List<ChangelogCategory> Categories { get; set; } = new List<ChangelogCategory>();
 
-        public List<string> VersionFilters { get; set; } = new List<string>();
+        /// <summary>
+        /// Defines links that can appear on each changelog item
+        /// </summary>
+        public List<ChangelogLink> Links { get; set; } = new List<ChangelogLink>();
 
-        public string VersionTemplate { get; set; } = "## {Version}";
+        /// <summary>
+        /// Defines what is a version from the tags
+        /// </summary>
+        public FilterSettings VersionFilter { get; set; } = new FilterSettings("v");
 
-        public string CategoryTemplate { get; set; } = "### {Category}";
+        /// <summary>
+        /// Defines the templates for how the changelog should look
+        /// </summary>
+        public ChangelogTemplateSettings Templates { get; set; } = new ChangelogTemplateSettings();
 
-        public string IssueTemplate { get; set; } = "* {Message} {LinkTemplate}";
-
-        public string LinkTemplate { get; set; } = "[{LinkCleanKey}]({Url})";
-
-        public string NoIssuesTemplate { get; set; } = " N/A ";
-
+        /// <summary>
+        /// Defines the location of where the changelog should be written
+        /// </summary>
         public string ChangelogLocation { get; set; } = "./CHANGELOG.md";
 
+        /// <summary>
+        /// Defines the location of the gitrepo relative to this changelog
+        /// </summary>
         public string GitRepoLocation { get; set; } = ".";
 
+        /// <summary>
+        /// Defines the title of the unreleased git changelog items
+        /// </summary>
         public string UnreleasedTitle { get; set; } = "Unreleased";
 
-        public int GitRepoCommitTake { get; set; } = -1;
+        /// <summary>
+        /// Defines how far back the changelog should search for git commits and tags
+        /// </summary>
+        public int GitRepoCommitLimit { get; set; } = -1;
 
+        /// <summary>
+        /// Determines if all commits should be searched
+        /// </summary>
         public bool AllCommits { get; set; } = true;
+
+        /// <summary>
+        /// Determines if this changelog generation is running in test mode
+        /// </summary>
+        public bool TestMode { get; set; } = false;
+
+        /// <summary>
+        /// Determines the name of the latest code branch for use when calculating unreleased git items
+        /// </summary>
+        public string LatestCodeBranch { get; set; } = "develop";
     }
 }

@@ -2,22 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Core</BaseOutputPath>
-    <OutputType>Library</OutputType>
-    <WriteVersionInfoToBuildLog>true</WriteVersionInfoToBuildLog>
-    <UpdateVersionProperties>true</UpdateVersionProperties>
+    <RootNamespace>$(MSBuildProjectName)</RootNamespace>
+    <BaseOutputPath>$(MSBuildProjectDirectory)\..\..\dist\$(MSBuildProjectName)</BaseOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageVersion>$(Version)</PackageVersion>
+    <PackageId>igloo15.ChangelogGenerator.Core</PackageId>
     <Title>igloo15.ChangelogGenerator.Core</Title>
-    <Authors>Igloo15</Authors>
+    <Authors>igloo15</Authors>
     <Description>net standard library that can generate a changelog based on the git history</Description>
     <PackageProjectUrl>https://github.com/igloo15/ChangelogGenerator</PackageProjectUrl>
     <PackageTags>mqttnet;mqttserver;server;dotnet;netstandard;diagnostics</PackageTags>
     <RepositoryUrl>https://github.com/igloo15/ChangelogGenerator.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+    <PackageReference Include="LibGit2Sharp" Version="0.26.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
 
 </Project>

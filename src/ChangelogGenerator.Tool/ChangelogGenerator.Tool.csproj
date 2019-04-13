@@ -6,7 +6,7 @@
     <AssemblyName>ChangelogGenerator.Tool</AssemblyName>
     <AssemblyTitle>ChangelogGenerator</AssemblyTitle>
     <RootNamespace>ChangelogGenerator.Tool</RootNamespace>
-    <BaseOutputPath>$(MSBuildProjectFullPath)\..\..\..\dist\ChangelogGenerator.Tool</BaseOutputPath>
+    <BaseOutputPath>$(MSBuildProjectDirectory)\..\..\dist\ChangelogGenerator.Tool</BaseOutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
@@ -16,6 +16,7 @@
     <ToolCommandName>dotnet-changelog-generator</ToolCommandName>
     <IsPackable>true</IsPackable>
     <PackageVersion>$(Version)</PackageVersion>
+    <PackageId>igloo15.ChangelogGenerator.Tool</PackageId>
     <Title>igloo15.ChangelogGenerator.Tool</Title>
     <Authors>igloo15</Authors>
     <Description>dotnet cli tool used to generate a changelog</Description>
@@ -26,7 +27,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.4.3" />
+    <Content Include="changelog.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChangelogGenerator.Core\ChangelogGenerator.Core.csproj" />
   </ItemGroup>
 
 

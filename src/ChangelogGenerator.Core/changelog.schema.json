@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "definitions": {
+    "FilterSettings": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RemoveTokens": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "RemoveAllKey": {
+          "type": "boolean"
+        },
+        "MatchCase": {
+          "type": "boolean"
+        }
+      },
+      "required": ["Keys"]
+    }
+  },
+  "properties": {
+    "Categories": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Filter": {
+              "$ref": "#/definitions/FilterSettings"
+            },
+            "DisplayName": {
+              "type": "string"
+            },
+            "IsSummary": {
+              "type": "boolean"
+            },
+            "IsDefault": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Filter",
+            "DisplayName"
+          ]
+        }
+      ]
+    },
+    "Links": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Filter": {
+              "$ref": "#/definitions/FilterSettings"
+            },
+            "UrlTemplate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Filter",
+            "UrlTemplate"
+          ]
+        }
+      ]
+    },
+    "VersionFilter": {
+      "$ref": "#/definitions/FilterSettings"
+    },
+    "Templates": {
+      "type": "object",
+      "properties": {
+        "TitleTemplate": {
+          "type": "string"
+        },
+        "VersionTemplate": {
+          "type": "string"
+        },
+        "SummarySentenceTemplate": {
+          "type": "string"
+        },
+        "CategoryTemplate": {
+          "type": "string"
+        },
+        "IssueTemplate": {
+          "type": "string"
+        },
+        "LinkTemplate": {
+          "type": "string"
+        },
+        "NoIssueTemplate": {
+          "type": "string"
+        },
+        "EndCategoryTemplate": {
+          "type": "string"
+        },
+        "EndVersionTemplate": {
+          "type": "string"
+        },
+        "EndChangelogTemplate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TitleTemplate",
+        "VersionTemplate",
+        "CategoryTemplate",
+        "IssueTemplate",
+        "LinkTemplate",
+        "NoIssueTemplate",
+        "EndCategoryTemplate",
+        "EndVersionTemplate"
+      ]
+    },
+    "ChangelogLocation": {
+      "type": "string"
+    },
+    "GitRepoLocation": {
+      "type": "string"
+    },
+    "UnreleasedTitle": {
+      "type": "string"
+    },
+    "GitRepoCommitLimit": {
+      "type": "integer"
+    },
+    "AllCommits": {
+      "type": "boolean"
+    },
+    "TestMode": {
+      "type": "boolean"
+    },
+    "LatestCodeBranch": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "Categories",
+    "Links",
+    "VersionFilter",
+    "Templates",
+    "ChangelogLocation"
+  ]
+}

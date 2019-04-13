@@ -1,5 +1,5 @@
 {
-  "$schema": "../ChangelogGenerator.Core/changelog.schema.json",
+  "$schema": "./src/ChangelogGenerator.Core/changelog.schema.json",
   "Categories": [
     {
       "Filter": {
@@ -17,7 +17,7 @@
     },
     {
       "Filter": {
-        "Keys": [ "#Add", "#Added" ]
+        "Keys": [ "#Add" ]
       },
       "DisplayName": "Add"
     },
@@ -38,8 +38,8 @@
   "Links": [
     {
       "Filter": {
-        "Keys": [ "#issue-" ],
-        "RemoveTokens": [ "#issue-" ],
+        "Keys": [ "#issue" ],
+        "RemoveTokens": [ "#issue" ],
         "RemoveAllKey":  false
       },      
       "UrlTemplate": "https://github.com/igloo15/ChangelogGenerator/issues/{LinkCleanKey}"
